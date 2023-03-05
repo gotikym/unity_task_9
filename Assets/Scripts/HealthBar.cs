@@ -8,28 +8,8 @@ public class HealthBar : MonoBehaviour
 
     private float _timeChange = 1f;
 
-    private float _currentHealth;
-
-    private void Start()
+    public void ChangeBar(float helth)
     {
-        _currentHealth = _healthBarSlider.value;
-    }
-
-    public void TakeDamage(float valueChange)
-    {
-        if (_currentHealth > _healthBarSlider.minValue)
-        {
-            _currentHealth -= valueChange;
-            _healthBarSlider.DOValue(_currentHealth, _timeChange);
-        }
-    }
-
-    public void TakeHeal(float valueChange)
-    {
-        if (_currentHealth < _healthBarSlider.maxValue)
-        {
-            _currentHealth += valueChange;
-            _healthBarSlider.DOValue(_currentHealth, _timeChange);
-        }
+        _healthBarSlider.DOValue(helth,_timeChange);
     }
 }
