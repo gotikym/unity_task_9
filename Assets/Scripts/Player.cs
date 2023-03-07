@@ -3,34 +3,32 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _changeHealth;
+    [SerializeField] private UnityEvent _changedHealth;
 
-    private float _heal = 10f;
-    private float _damage = 10f;
-    private float _health = 100;
     private float _maxHealth = 100;
     private float _minHealth = 0;
 
-    public float ConveyMeaningHealth()
+    public float Health { get; private set; }
+
+    private void Start()
     {
-        return _health;
+        Health = _maxHealth;
     }
 
-    public void TakeDamage()
+    public event UnityAction ChangedHealth
     {
-        if (_health > _minHealth)
-        {
-            _health -= _damage;
-            _changeHealth?.Invoke();
-        }
+        add => _changedHealth.AddListener(value);
+        remove => _changedHealth.RemoveListener(value);
+    }
+    public void TakeDamage(float damage)
+    {
+        Health = Mathf.Clamp(Health - damage, _minHealth, _maxHealth);
+        _changedHealth?.Invoke();
     }
 
-    public void TakeHeal()
+    public void TakeHeal(float heal)
     {
-        if (_health < _maxHealth)
-        {
-            _health += _heal;
-            _changeHealth?.Invoke();
-        }
+        Health = Mathf.Clamp(Health + heal, _minHealth, _maxHealth); ;
+        _changedHealth?.Invoke();
     }
 }

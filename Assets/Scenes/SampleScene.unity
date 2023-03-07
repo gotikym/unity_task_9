@@ -152,21 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72d98464785955489303dc0a341ede5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeHealth:
+  _changedHealth:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2040730680}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: ChangeValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &77501088
 Transform:
   m_ObjectHideFlags: 0
@@ -919,12 +907,12 @@ MonoBehaviour:
       - m_Target: {fileID: 77501087}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: TakeHeal
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -978,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72d98464785955489303dc0a341ede5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeHealth:
+  _changedHealth:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &963194225
@@ -1229,12 +1217,12 @@ MonoBehaviour:
       - m_Target: {fileID: 77501087}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: TakeDamage
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1288,7 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72d98464785955489303dc0a341ede5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeHealth:
+  _changedHealth:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1472905426
@@ -1507,5 +1495,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0153fcbfea34244a89a633fdb54a0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBarSlider: {fileID: 2040730679}
+  _healthBar: {fileID: 2040730679}
   _player: {fileID: 77501087}
