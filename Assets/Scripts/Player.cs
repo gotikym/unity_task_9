@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     public float Health { get; private set; }
 
-    public event UnityAction OnChangedHealth
+    public event UnityAction ChangedHealth
     {
         add => _changedHealth.AddListener(value);
         remove => _changedHealth.RemoveListener(value);
