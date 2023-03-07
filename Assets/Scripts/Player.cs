@@ -10,16 +10,17 @@ public class Player : MonoBehaviour
 
     public float Health { get; private set; }
 
+    public event UnityAction OnChangedHealth
+    {
+        add => _changedHealth.AddListener(value);
+        remove => _changedHealth.RemoveListener(value);
+    }
+
     private void Start()
     {
         Health = _maxHealth;
     }
 
-    public event UnityAction ChangedHealth
-    {
-        add => _changedHealth.AddListener(value);
-        remove => _changedHealth.RemoveListener(value);
-    }
     public void TakeDamage(float damage)
     {
         Health = Mathf.Clamp(Health - damage, _minHealth, _maxHealth);

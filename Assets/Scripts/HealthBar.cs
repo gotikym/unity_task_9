@@ -9,13 +9,18 @@ public class HealthBar : MonoBehaviour
 
     private float _timeChange = 1f;
 
-    private void Start()
-    {
-        _player.ChangedHealth += ChangeValue;
-    }
-
     public void ChangeValue()
     {
         _healthBar.DOValue(_player.Health, _timeChange);
+    }
+
+    private void OnEnable()
+    {
+        _player.OnChangedHealth += ChangeValue;
+    }
+
+    private void OnDisable()
+    {
+        _player.OnChangedHealth -= ChangeValue;
     }
 }
