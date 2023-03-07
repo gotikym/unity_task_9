@@ -9,11 +9,6 @@ public class HealthBar : MonoBehaviour
 
     private float _timeChange = 1f;
 
-    public void OnChangedHealth()
-    {
-        _healthBar.DOValue(_player.Health, _timeChange);
-    }
-
     private void OnEnable()
     {
         _player.ChangedHealth += OnChangedHealth;
@@ -22,5 +17,10 @@ public class HealthBar : MonoBehaviour
     private void OnDisable()
     {
         _player.ChangedHealth -= OnChangedHealth;
+    }
+
+    public void OnChangedHealth()
+    {
+        _healthBar.DOValue(_player.Health, _timeChange);
     }
 }
